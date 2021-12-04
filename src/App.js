@@ -1,23 +1,55 @@
 import logo from './logo.svg';
 import './App.css';
+import Hoc from './components/HOC'
+import ProductsTable from './components/ProductsTable'
+import UsersTable from './components/UsersTable'
+
+const ProductsData = [
+  {
+      id: 1,
+      name: 'TCS'
+        
+  },
+  {
+      id: 2,
+      name: 'Infosys'
+  },
+  {
+      id: 3,
+      name: 'Reliance'
+  }
+];
+const UsersData = [
+  {
+      id: 1,
+      name: 'Ali'
+        
+  },
+  {
+      id: 2,
+      name: 'Zain'
+  },
+  {
+      id: 3,
+      name: 'Mohammed'
+  }
+];
+
+const Products = Hoc(
+  ProductsTable,
+  ProductsData
+);
+
+const Users = Hoc(
+  UsersTable,
+  UsersData
+);
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Products></Products>
     </div>
   );
 }
